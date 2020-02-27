@@ -1,3 +1,1 @@
-# learning-cog-2ufvjr
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/learning-cog-2ufvjr)
+<b>Sample Angular 7 Login application</b>
