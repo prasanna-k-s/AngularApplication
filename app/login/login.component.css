@@ -1,0 +1,42 @@
+.box-center{
+  font-family: Lato;
+  font-size:20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  margin-bottom:auto;
+}
+input {
+  border-radius: 25px;
+  border: 1px solid #609;
+  outline:none;
+  color:#609;
+  font-size: 15px solid;
+  text-align:center;
+}
+
+table {
+  table-layout:fixed;
+}
+table td {
+  overflow: hidden;
+}
+
+button {
+  font-size: 14px;
+  color:white;
+  border-radius: 25px;
+  background-color: #609;
+  width:75%;
+  border: none;
+  margin:auto;
+  display:block;
+  }
+.footer-text {
+  font-size:12px;
+  text-align:center;
+}
+a {
+  color:#609;
+}
+

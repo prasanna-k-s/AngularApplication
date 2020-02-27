@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<br/>
+<table align="center" class="box-center" >
+  <th colspan="2"><hello name="{{ name }}"></hello></th>
+  <br/>
+  <br/>
+  <tr>
+    <td width="100px"> <b>Username</b> </td> <td> <input type="text" name="username" [(ngModel)] = "model.username" autocomplete="off" /> </td>
+  </tr>    
+  <br/>
+  <tr>
+    <td> <b> Password </b> </td> <td> <input type="password" name="password" autocomplete="off" [(ngModel)] = "model.password"/>  </td>
+  </tr>
+  <br/>
+  <tr> <td class="footer-text"> Need an account ? <a routerLink="/register" routerLinkActive="active">Signup</a> </td> <td> <button class="btn btn-primary" type="submit" (click) = 'login()'> Login </button>  </td> </tr>
+
+</table>

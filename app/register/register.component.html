@@ -1,0 +1,14 @@
+
+<div class="register-table">
+  <hello name="{{ name }}"></hello>
+
+  <table>
+    <tr> <td> <b>Username:</b> </td> <td> <input type="text" name="username" /> </td> </tr>
+    <tr> <td> <b> Password:</b> </td> <td> <input type="password" name="password" /> </td>
+    <tr> <td> <b>Re-Type Password:</b> </td> <td> <input type="password" name="retypepassword" /> </td>  </tr>
+    <br/>
+    <tr> <td class="footer-text"><b> Back to </b> <a routerLink="/login" routerLinkActive="active">Login</a> </td> <td colspan="2" align="center"> <button class="btn btn-primary register-button" type="submit" (click) = 'signup()'> Register </button> </td> </tr>
+
+  </table>
+
+</div>
