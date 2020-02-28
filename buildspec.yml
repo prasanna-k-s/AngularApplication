@@ -1,30 +1,26 @@
-# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
 version: 0.2
-
+env:
+  variables:
+    S3_BUCKET: "loginapp532"
 phases:
   install:
     runtime-versions:
-      nodejs: 10  
-    commands:
-      - echo Not Installing Mocha...
+      nodejs: 10
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
+      - npm install -g @angular/cli
   build:
     commands:
       - echo Build started on `date`
-      - echo Compiling the Node.js code
-      - ng build
+      - ng build --prod --aot
   post_build:
-    commands:
+     commands:
+      - aws s3 cp dist s3://${S3_BUCKET} --recursive
       - echo Build completed on `date`
-# Include only the files required for your application to run.
-# Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages 
-# used only for building and testing.
-# ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
 artifacts:
   files:
-    - app.js
-    - index.html
-    - package.json
+      - '**/*'
+  base-directory: 'dist*'
+  discard-paths: yes
