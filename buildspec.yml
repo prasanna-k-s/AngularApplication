@@ -15,6 +15,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
+      - ng build
   post_build:
     commands:
       - echo Build completed on `date`
@@ -27,5 +28,3 @@ artifacts:
     - app.js
     - index.html
     - package.json
-    - node_modules/async/*
-    - node_modules/lodash/*
