@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Router } from "@angular/router";
 import { AuthenicationService } from '../services/authenication.service';
 import { Observable } from 'rxjs/Observable';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-login',
@@ -40,17 +41,20 @@ export class LoginComponent implements OnInit {
    * Validates the username from the response.
    */
   private authenicate(response: Object, username: string): boolean {
-    let list: Object[] = [];
+    let list: Object[] = [{
+      first_name:''
+    }];
+    _.set(list,'first_name','');
     list = JSON.parse(JSON.stringify(response)).data;
     //console.log(list); 
 
     for (let element of list) {
       //console.log(element.first_name);
-      if (element.first_name == username) {
+      //if (element.first_name == username) {
         console.log('Valid user');
         localStorage.setItem('currentUser',username);
         return true;
-      }
+      //}
     }
     return false;
   }
