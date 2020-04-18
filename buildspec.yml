@@ -3,7 +3,6 @@ version: 0.2
 env:
     variables:
         CACHE_CONTROL: "86400"
-        S3_BUCKET: "s3://loginapp532"
         BUILD_FOLDER: "dist"
 phases:
   install:
@@ -19,6 +18,15 @@ phases:
         - echo Build started for the Project, Please wait...
         - ng build
         - echo Build Completed
+        
+  post_build:
+    commands:
+        - echo POST BUILD commands Started
+        - pwd
+        - echo Clearing AWS S3 bucket
+        - aws s3 rm s3://awsangularcodebuildbucketv1/buildArtifcatsv1/*
+        - echo S3 Bucket cleared
+        - aws s3 cp dist/DummyAngular/ s3://awsangularcodebuildbucketv1/buildArtifcatsv1/ --recursive
 artifacts:
     files:
         - '**/*'
