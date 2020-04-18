@@ -1,1 +1,1 @@
-<b>Sample Angular 7 Login application</b>
+<b>Angular application</b>
