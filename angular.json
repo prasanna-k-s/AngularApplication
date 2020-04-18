@@ -25,7 +25,11 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+			  "src/appspec.yml",
+			  "src/scripts/install_dependencies",
+			  "src/scripts/start_server",
+			  "src/scripts/stop_server"
             ],
             "styles": [
               "src/styles.scss"
