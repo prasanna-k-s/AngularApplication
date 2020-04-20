@@ -29,8 +29,8 @@ phases:
         - echo Starting Preparing Archive
         - echo Moving to the artifcats folder
         - cd dist/DummyAngular
-        - pwd
-        - tar -czvf artifacts.tar.gz ./*.*
+        - ls -l
+        - tar -czvf artifacts.tar.gz ./*
         - echo Archieval done, Now copying to S3
         - aws s3 cp artifacts.tar.gz s3://awsangularcodebuildbucketv1/buildArtifcatsv1/         
 artifacts:
