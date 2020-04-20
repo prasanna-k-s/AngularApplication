@@ -12,7 +12,7 @@ import * as _ from 'lodash';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-  name = 'Login';
+  name = 'Angular Application';
 
   constructor(private router: Router, private authenticationService: AuthenicationService) { }
   /**
