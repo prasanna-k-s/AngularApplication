@@ -26,7 +26,12 @@ phases:
         - echo Clearing AWS S3 bucket
         - aws s3 rm s3://awsangularcodebuildbucketv1/buildArtifcatsv1/*
         - echo S3 Bucket cleared
-        - aws s3 cp dist/DummyAngular/ s3://awsangularcodebuildbucketv1/buildArtifcatsv1/ --recursive
+        - echo Starting Preparing Archive
+        - echo Moving to the artifcats folder
+        - cd dist/DummyAngular
+        - tar -czvf artifacts.tar.gz ./
+        - echo Archieval done, Now copying to S3
+        - aws s3 cp artifacts.tar.gz s3://awsangularcodebuildbucketv1/buildArtifcatsv1/         
 artifacts:
     files:
         - '**/*'
