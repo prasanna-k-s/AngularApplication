@@ -3,7 +3,6 @@ version: 0.2
 env:
     variables:
         CACHE_CONTROL: "86400"
-        S3_BUCKET: "s3://loginapp532"
         BUILD_FOLDER: "dist"
 phases:
   install:
@@ -19,6 +18,10 @@ phases:
         - echo Build started for the Project, Please wait...
         - ng build
         - echo Build Completed
+        
+  post_build:
+    commands:
+        - echo POST BUILD Stage
 artifacts:
     files:
         - '**/*'
