@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
    * Login submit function.
    */
   login() {
-    this.authenticationService.login(this.model.username, this.model.password).subscribe(response => { this.handleSuccess(response, this.model.username); this.router.navigateByUrl('/home'); },
+    this.authenticationService.login(this.model.username, this.model.password).subscribe(response => { this.handleSuccess(response, this.model.username); this.router.navigateByUrl('/dashboard'); },
       error => { this.handleError(error); });;
 
   }
